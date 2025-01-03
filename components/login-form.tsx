@@ -13,14 +13,18 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { useState } from "react"
+import { useState, useTransition } from "react"
 import Link from "next/link"
 import { LoginSchema } from "@/schema"
+import FormError from "./form-error"
+import FormSuccess from "./form-success"
+import login from "@/actions/login"
 
 
 const LoginForm = () => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const [isPending, startTransition] = useTransition();
 
     // 1. Define your form.
     const form = useForm<z.infer<typeof LoginSchema>>({
@@ -33,7 +37,20 @@ const LoginForm = () => {
 
     // 2. Define a submit handler.
     const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
-        console.log(values)
+        setError("");
+        setSuccess("");
+
+        startTransition(() => {
+            login(values)
+                .then((data) => {
+                    if (data.error) {
+                        setError(data.error);
+                    }
+                    if (data.success) {
+                        setSuccess(data.success);
+                    }
+                });
+        })
     }
 
     return (
@@ -44,6 +61,7 @@ const LoginForm = () => {
                     <FormField
                         control={form.control}
                         name="email"
+                        disabled={isPending}
                         render={({ field }) => (
                             <FormItem>
                                 <div className="shad-form-item">
@@ -59,6 +77,7 @@ const LoginForm = () => {
                     <FormField
                         control={form.control}
                         name="password"
+                        disabled={isPending}
                         render={({ field }) => (
                             <FormItem>
                                 <div className="shad-form-item">
@@ -71,13 +90,14 @@ const LoginForm = () => {
                             </FormItem>
                         )}
                     />
-                    <Button type="submit" disabled={isLoading} className="form-submit-button">Sign In</Button>
+                    <FormError message={error} />
+                    <FormSuccess message={success} />
 
-                    {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+                    <Button type="submit" disabled={isPending} className="form-submit-button">Sign In</Button>
 
                     <div className="flex justify-center">
                         <p className="font-normal">
-                            Don't have an account? 
+                            Don't have an account?
                         </p>
 
                         <Link href="/sign-up" className="font-semibold text-slate-500 ml-2">
@@ -86,8 +106,6 @@ const LoginForm = () => {
                     </div>
                 </form>
             </Form>
-
-            {/* OTP VERIFICATION */}
         </>
     )
 
