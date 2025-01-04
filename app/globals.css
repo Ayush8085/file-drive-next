@@ -186,7 +186,7 @@
     @apply w-full flex gap-1 sm:gap-2 justify-between !important;
   }
   .shad-otp-slot {
-    @apply text-[40px] font-medium rounded-xl ring-brand shadow-drop-1 text-brand-100 justify-center flex border-2 size-12 md:size-16 gap-5 !important;
+    @apply text-[40px] font-medium rounded-xl ring-brand shadow-drop-1 text-slate-100 justify-center flex border-2 size-12 md:size-16 gap-5 !important;
   }
 
   .shad-sheet {
@@ -221,7 +221,7 @@
 
   /* Root Layout */
   .main-content {
-    @apply remove-scrollbar h-full flex-1 overflow-auto bg-light-400 px-5 py-7 sm:mr-7 sm:rounded-[30px] md:mb-7 md:px-9 md:py-10 !important;
+    @apply remove-scrollbar h-full flex-1 overflow-auto bg-slate-400 px-5 py-7 sm:mr-7 sm:rounded-[30px] md:mb-7 md:px-9 md:py-10 !important;
   }
 
   /* Dashboard */
@@ -281,7 +281,7 @@
     @apply text-center  !important;
   }
   .delete-file-name {
-    @apply font-medium text-brand-100 !important;
+    @apply font-medium text-slate-100 !important;
   }
   .modal-cancel-button {
     @apply h-[52px] flex-1 rounded-full bg-white  hover:bg-transparent !important;
@@ -292,7 +292,7 @@
 
   /* ActionsModalContent */
   .file-details-thumbnail {
-    @apply !mb-1 flex items-center gap-3 rounded-xl border  bg-light-400/50 p-3 !important;
+    @apply !mb-1 flex items-center gap-3 rounded-xl border  bg-slate-400/50 p-3 !important;
   }
   .file-details-label {
     @apply body-2 w-[30%]  !important;
@@ -385,7 +385,7 @@
     @apply flex-center min-w-fit gap-4 !important;
   }
   .sign-out-button {
-    @apply flex-center h-[52px] min-w-[54px] items-center rounded-full bg-slate-400/10 p-0 text-brand shadow-none transition-all hover:bg-slate/20 !important;
+    @apply flex-center h-[52px] min-w-[54px] items-center rounded-full bg-slate-400/10 p-0 text-slate-500 shadow-none transition-all hover:bg-slate-500/20 !important;
   }
 
   /* Mobile Navigation */
@@ -399,7 +399,7 @@
     @apply aspect-square w-10 rounded-full object-cover !important;
   }
   .mobile-nav {
-    @apply h5 flex-1 gap-1 text-brand !important;
+    @apply h5 flex-1 gap-1 text-slate-500 !important;
   }
   .mobile-nav-list {
     @apply flex flex-1 flex-col gap-4 !important;
@@ -408,7 +408,7 @@
     @apply flex  gap-4 w-full justify-start items-center h5 px-6 h-[52px] rounded-full !important;
   }
   .mobile-sign-out-button {
-    @apply h5 flex h-[52px] w-full items-center gap-4 rounded-full bg-slate-400/10 px-6 text-brand shadow-none transition-all hover:bg-slate-400/20 !important;
+    @apply h5 flex h-[52px] w-full items-center gap-4 rounded-full bg-slate-400/10 px-6 text-slate-500 shadow-none transition-all hover:bg-slate-400/20 !important;
   }
 
   /* OTP Modal */
@@ -438,7 +438,7 @@
     @apply remove-scrollbar hidden h-screen w-[90px] flex-col overflow-auto px-5 py-7 sm:flex lg:w-[280px] xl:w-[325px] !important;
   }
   .sidebar-nav {
-    @apply h5 mt-9 flex-1 gap-1 text-brand !important;
+    @apply h5 mt-9 flex-1 gap-1 text-slate-500 !important;
   }
   .sidebar-nav-item {
     @apply flex  gap-4 rounded-xl lg:w-full justify-center lg:justify-start items-center h5 lg:px-[30px] h-[52px] lg:rounded-full !important;
@@ -451,7 +451,7 @@
   }
 
   .shad-active {
-    @apply bg-slate text-white shadow-drop-2 !important;
+    @apply bg-slate-500 text-white shadow-sm !important;
   }
 
   /* Sort */

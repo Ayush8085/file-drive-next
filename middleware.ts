@@ -24,7 +24,7 @@ export default async function authMiddleware(req: any) {
     }
 
     if (!isLoggedIn && !isPublicRoute) {
-        return Response.redirect(new URL("/auth/sign-in", nextUrl));
+        return Response.redirect(new URL("/sign-in", nextUrl));
     }
 
     return null;

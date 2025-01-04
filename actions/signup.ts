@@ -5,6 +5,7 @@ import z from "zod";
 import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
 import { signIn } from "@/auth";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 export default async function signup(formData: z.infer<typeof SignUpSchema>) {
     const validatedData = SignUpSchema.safeParse(formData);
@@ -38,7 +39,7 @@ export default async function signup(formData: z.infer<typeof SignUpSchema>) {
     await signIn("credentials", {
         email,
         password,
-        redirectTo: "/home",
+        redirectTo: DEFAULT_LOGIN_REDIRECT,
     });
 
     return { success: "Registration successful" };
