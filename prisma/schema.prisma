@@ -16,14 +16,26 @@ model User {
   email    String @unique
   password String
 
-  File File[]
+  File     File[]
+  FileUser FileUser[]
 }
 
 model File {
-  id   String @id @default(cuid())
-  name String
-  url  String
-  type String // document, image, video, audio, other
+  id        String @id @default(cuid())
+  name      String
+  url       String
+  type      String // document, image, video, audio, other
+  extension String
+  size      Int
+
+  owner   User   @relation(fields: [ownerId], references: [id])
+  ownerId String
+}
+
+// THOSE WHO CAN ACCESS THE FILE
+model FileUser {
+  id     String @id @default(cuid())
+  fileId String
 
   user   User   @relation(fields: [userId], references: [id])
   userId String

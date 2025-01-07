@@ -186,7 +186,7 @@
     @apply w-full flex gap-1 sm:gap-2 justify-between !important;
   }
   .shad-otp-slot {
-    @apply text-[40px] font-medium rounded-xl ring-brand shadow-drop-1 text-slate-100 justify-center flex border-2 size-12 md:size-16 gap-5 !important;
+    @apply text-[40px] font-medium rounded-xl ring-brand shadow-sm text-slate-100 justify-center flex border-2 size-12 md:size-16 gap-5 !important;
   }
 
   .shad-sheet {
@@ -275,7 +275,7 @@
 
   /* ActionsDropdown */
   .rename-input-field {
-    @apply body-2 shad-no-focus h-[52px] w-full rounded-full border px-4 shadow-drop-1 !important;
+    @apply body-2 shad-no-focus h-[52px] w-full rounded-full border px-4 shadow-sm !important;
   }
   .delete-confirmation {
     @apply text-center  !important;
@@ -305,7 +305,7 @@
     @apply !mt-2 space-y-2 !important;
   }
   .share-input-field {
-    @apply body-2 shad-no-focus h-[52px] w-full rounded-full border px-4 shadow-drop-1 !important;
+    @apply body-2 shad-no-focus h-[52px] w-full rounded-full border px-4 shadow-sm !important;
   }
   .share-remove-user {
     @apply rounded-full bg-transparent  shadow-none hover:bg-transparent !important;
@@ -330,7 +330,7 @@
 
   /* Card */
   .file-card {
-    @apply flex cursor-pointer flex-col gap-6 rounded-[18px] bg-white p-5 shadow-sm transition-all hover:shadow-drop-3 !important;
+    @apply flex cursor-pointer flex-col gap-6 rounded-[18px] bg-white p-5 shadow-sm transition-all hover:shadow-md !important;
   }
   .file-card-details {
     @apply flex flex-col gap-2  !important;
@@ -361,20 +361,20 @@
 
   /* FileUploader */
   .uploader-button {
-    @apply primary-btn h-[52px] gap-2 px-10 shadow-drop-1 !important;
+    @apply primary-btn h-[52px] gap-2 px-10 shadow-sm !important;
   }
   .uploader-preview-list {
-    @apply fixed bottom-10 right-10 z-50 flex size-full h-fit max-w-[480px] flex-col gap-3 rounded-[20px] bg-white p-7 shadow-drop-3 !important;
+    @apply fixed bottom-10 right-10 z-50 flex size-full h-fit max-w-[480px] flex-col gap-3 rounded-[20px] bg-white p-7 shadow-md !important;
   }
   .uploader-preview-item {
-    @apply flex items-center justify-between  gap-3 rounded-xl p-3 shadow-drop-3 !important;
+    @apply flex items-center justify-between  gap-3 rounded-xl p-3 shadow-md !important;
   }
   .preview-item-name {
     @apply subtitle-2 mb-2 line-clamp-1 max-w-[300px] !important;
   }
 
   .error-toast {
-    @apply bg-red !rounded-[10px] !important;
+    @apply bg-red-500 !rounded-[10px] !important;
   }
 
   /* Header */
@@ -421,7 +421,7 @@
     @apply relative w-full md:max-w-[480px] !important;
   }
   .search-input-wrapper {
-    @apply flex h-[52px] flex-1 items-center gap-3 rounded-full px-4 shadow-drop-3 !important;
+    @apply flex h-[52px] flex-1 items-center gap-3 rounded-full px-4 shadow-md !important;
   }
   .search-input {
     @apply body-2 shad-no-focus  w-full border-none p-0 shadow-none  !important;
@@ -459,7 +459,7 @@
     @apply shad-no-focus h-11 w-full rounded-[8px] border-transparent bg-white !shadow-sm sm:w-[210px] !important;
   }
   .sort-select-content {
-    @apply !shadow-drop-3 !important;
+    @apply !shadow-md !important;
   }
 
   /* Thumbnail */
