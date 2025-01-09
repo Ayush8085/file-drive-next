@@ -39,7 +39,7 @@ model File {
 model FileUser {
   id String @id @default(cuid())
 
-  file   File   @relation(fields: [fileId], references: [id])
+  file   File   @relation(fields: [fileId], references: [id], onDelete: Cascade)
   fileId String
 
   user   User   @relation(fields: [userId], references: [id])

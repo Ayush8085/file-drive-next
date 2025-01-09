@@ -20,7 +20,8 @@ export default async function getFiles() {
                 include: {
                     owner: true
                 }
-            }
+            },
+            user: true
         }
     })
 

@@ -8,7 +8,7 @@ const Card = ({ file }) => {
 
     return (
         <Link href={file.url} target="_blank" className="file-card">
-            <div className="flex jusitfy-between">
+            <div className="flex justify-between">
                 <Thumbnail
                     type={file.type}
                     extension={file.extension}
@@ -20,7 +20,7 @@ const Card = ({ file }) => {
                 <div className="flex flex-col items-end justify-between">
                     <ActionDropdown file={file} />
 
-                    <p className='body-1'>
+                    <p className="body-1">
                         {convertFileSize(file.size)}
                     </p>
                 </div>
