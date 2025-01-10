@@ -1,10 +1,16 @@
 import getFiles from "@/actions/getFiles";
 import Card from "@/components/Card";
 import Sort from "@/components/Sort";
+import { getFileTypesParams } from "@/lib/utils";
 
-const page = async ({ params }: SearchParamProps) => {
+const page = async ({ searchParams, params }: SearchParamProps) => {
     const type = (await params).type as string || "";
-    const files = await getFiles();
+    const searchText = (await searchParams)?.query as string || "";
+    const sort = (await searchParams)?.sort as string || "";
+
+    const types = getFileTypesParams(type) as FileType[];
+
+    const files = await getFiles({ types, searchText, sort });
 
     return (
         <div className="page-container">
@@ -29,7 +35,7 @@ const page = async ({ params }: SearchParamProps) => {
             {files.length > 0 ? (
                 <section className="file-list">
                     {files.map((file) => (
-                        <Card key={file.id} file={file.file}/>
+                        <Card key={file.id} file={file.file} />
                     ))}
                 </section>
             ) : (
